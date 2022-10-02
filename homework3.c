@@ -2,11 +2,11 @@
 int main(){
     double v, u, a, s, t;
     // 輸入速度、加速度、時間
-    printf("Enter velocity initial conditions: ");
+    printf("Enter initial velocity: ");
     scanf("%lf",&u);
-    printf("Enter acceleration initial conditions: ");
+    printf("Enter initial acceleration: ");
     scanf("%lf",&a);
-    printf("Enter time initial conditions: ");
+    printf("Enter initial time: ");
     scanf("%lf",&t);
     //
     if (t >= 0){ 
@@ -22,11 +22,11 @@ int main(){
        printf("\nThe way of distance is opposite to the origin one");
     } 
     else if(t < 0)
-        printf(" You got something wrong.Please rewrite the time\n");
+    {
+        printf(" You enter wrong value.Please rewrite the time\n");
         scanf("%lf", &t);
         v = u + (a*t);
         s = (u*t) + (t*t*2)/2;
-        printf("V is%lf \n",v);
-        printf("S is%lf ",s);
-        return 0; 
+        return (v = u + (a*t),s = (u*t) + (t*t*2)/2) ;
     }
+}
